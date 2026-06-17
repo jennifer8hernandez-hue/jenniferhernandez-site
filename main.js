@@ -1,0 +1,4 @@
+document.getElementById('burger').addEventListener('click',function(){document.getElementById('nav-links').classList.toggle('open');});
+document.querySelectorAll('a[href^="#"]').forEach(function(a){a.addEventListener('click',function(e){var t=document.querySelector(this.getAttribute('href'));if(t){e.preventDefault();window.scrollTo({top:t.getBoundingClientRect().top+window.pageYOffset-68,behavior:'smooth'});document.getElementById('nav-links').classList.remove('open');}});});
+window.addEventListener('scroll',function(){document.getElementById('nav').style.boxShadow=window.scrollY>40?'0 4px 24px rgba(0,0,0,.4)':'none';});
+function toggleFaq(btn){var item=btn.closest('.faq-item');var wasOpen=item.classList.contains('open');document.querySelectorAll('.faq-item.open').forEach(function(el){el.classList.remove('open');});if(!wasOpen){item.classList.add('open');}}
